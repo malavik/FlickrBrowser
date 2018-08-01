@@ -22,11 +22,6 @@ class GetRawData extends AsyncTask<String, Void, String> {
     }
 
     @Override
-    protected void onPostExecute(String s) {
-        super.onPostExecute(s);
-    }
-
-    @Override
     protected String doInBackground(String... strings) {
         HttpURLConnection connection = null;
         BufferedReader reader = null;
@@ -61,28 +56,3 @@ class GetRawData extends AsyncTask<String, Void, String> {
         return null;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
