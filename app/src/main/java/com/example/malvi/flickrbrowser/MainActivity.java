@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements GetFlickrJsonData
         Log.d(TAG, "onResume starts");
         super.onResume();
         GetFlickrJsonData getFlickrJsonData = new GetFlickrJsonData(this, "https://api.flickr.com/services/feeds/photos_public.gne", "en-us", true);
-        getFlickrJsonData.executeOnSameThread("tamilnadu,bird,underwater");
+        getFlickrJsonData.executeOnSameThread("tamilnadu,bird");
         Log.d(TAG, "onResume ends");
     }
 

@@ -28,6 +28,14 @@ class GetRawData extends AsyncTask<String, Void, String> {
         mCallback = callback;
     }
 
+    void runInSameThread(String s) {
+        Log.d(TAG, "runInSameThread starts");
+
+        onPostExecute(doInBackground(s));
+
+        Log.d(TAG, "runInSameThread ends");
+    }
+
     @Override
     protected void onPostExecute(String s) {
         Log.d(TAG, "onPostExecute: parameter = " + s);
@@ -61,8 +69,6 @@ class GetRawData extends AsyncTask<String, Void, String> {
 
             reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
-//            String line;
-//            while(null != (line = reader.readLine())) {
             for(String line = reader.readLine(); line != null; line = reader.readLine()) {
                 result.append(line).append("\n");
             }
